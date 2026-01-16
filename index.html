@@ -93,9 +93,9 @@
   
   <script>
 (function () {
-  const TARGET_FORM_ID = "YzUzeE";
-  const SISTER_COMPANY_ID = "SISTER_SITE_ID"; // public key/site ID
-  const SISTER_LIST_ID = "SISTER_LIST_ID";
+  const TARGET_FORM_ID = "YzUzeE"; //Demo I work here
+  const SISTER_COMPANY_ID = "R5tY9Y"; // Test Setup Account
+  const SISTER_LIST_ID = "VvhfAz"; //Email List
   const KLAVIYO_REVISION = "2025-10-15"; // required header :contentReference[oaicite:2]{index=2}
 
   async function subscribeSister({ email, first_name, last_name }) {
@@ -138,13 +138,13 @@
     //console.log(e);
     
     const md = e.detail?.metaData || {};
-    console.log('md' + md.$first_name);
+    //console.log('md' + md.$first_name);
     const payload = {
       email: md.$email,
       first_name: md.$first_name || md.firstName || "",
       last_name:  md.$last_name  || md.lastName  || ""
     };
-    console.log(payload);
+    //console.log(payload);
     console.log(payload.email);
     console.log(payload.first_name);
     console.log(payload.last_name);
