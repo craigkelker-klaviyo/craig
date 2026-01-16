@@ -134,7 +134,7 @@
     if (e?.detail?.type !== "submit") return;                 // submit event :contentReference[oaicite:3]{index=3}
     console.log('running2');
     if (TARGET_FORM_ID && e.detail.formId !== TARGET_FORM_ID) return;
-console.log('running3');
+    console.log('running3');
     const md = e.detail?.metaData || {};
     const payload = {
       email: md.email,
@@ -148,8 +148,11 @@ console.log('running3');
     
     if (!payload.email) return;
     console.log('running5');
-    try { await subscribeSister(payload); }
-    console.log('running6');
+    try { 
+      await subscribeSister(payload); 
+      console.log('running6');
+        }
+    
     catch (err) { console.error("Sister subscribe failed:", err); }
   });
 })();
