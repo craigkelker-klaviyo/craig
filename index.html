@@ -135,7 +135,10 @@
     console.log('running2');
     if (TARGET_FORM_ID && e.detail.formId !== TARGET_FORM_ID) return;
     console.log('running3');
+    console.log(e);
+    
     const md = e.detail?.metaData || {};
+    console.log(md);
     const payload = {
       email: md.email,
       first_name: md.first_name || md.firstName || "",
