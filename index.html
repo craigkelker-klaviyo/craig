@@ -140,9 +140,9 @@
     const md = e.detail?.metaData || {};
     console.log(md);
     const payload = {
-      email: md.email,
-      first_name: md.first_name || md.firstName || "",
-      last_name:  md.last_name  || md.lastName  || ""
+      email: md.$email,
+      first_name: md.$first_name || md.firstName || "",
+      last_name:  md.$last_name  || md.lastName  || ""
     };
     console.log(payload);
     console.log(payload.email);
