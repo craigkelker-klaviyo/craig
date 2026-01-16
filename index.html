@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Craig's Website (Wireframe)</title>
+  <style>
+    :root {
+      --bg: #f6f6f6;
+      --panel: #ffffff;
+      --ink: #222;
+      --muted: #666;
+      --line: #bdbdbd;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+    }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 20px; }
+    .box {
+      background: var(--panel);
+      border: 2px dashed var(--line);
+      border-radius: 12px;
+      padding: 16px;
+    }
+    .row { display: grid; gap: 16px; }
+    .row.two { grid-template-columns: 1fr 1fr; }
+    .row.three { grid-template-columns: 1fr 1fr 1fr; }
+
+    header { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .logo {
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      padding: 10px 14px;
+      border: 2px dashed var(--line);
+      border-radius: 10px;
+      background: #fff;
+    }
+    nav { display: flex; gap: 10px; flex-wrap: wrap; }
+    .nav-item {
+      padding: 8px 10px;
+      border: 2px dashed var(--line);
+      border-radius: 10px;
+      background: #fff;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .hero { display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 16px; align-items: stretch; }
+    .hero h1 { margin: 0 0 8px; font-size: 28px; }
+    .hero p { margin: 0; color: var(--muted); line-height: 1.4; }
+
+    .placeholder {
+      height: 180px;
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+      border: 2px dashed var(--line);
+      border-radius: 12px;
+      background: #fff;
+      font-weight: 600;
+    }
+
+    .section-title {
+      margin: 18px 0 10px;
+      font-size: 14px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .card h3 { margin: 0 0 8px; font-size: 16px; }
+    .lines { display: grid; gap: 8px; }
+    .line {
+      height: 12px;
+      border-radius: 6px;
+      border: 2px dashed var(--line);
+      background: #fff;
+    }
+    .line.short { width: 65%; }
+
+    footer { text-align: center; color: var(--muted); font-size: 14px; }
+
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; }
+      .row.two, .row.three { grid-template-columns: 1fr; }
+      header { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <!-- Top Header / Nav -->
+    <div class="box">
+      <header>
+        <div class="logo">Craig's Website</div>
+        <nav aria-label="Primary navigation">
+          <div class="nav-item">Home</div>
+          <div class="nav-item">About</div>
+          <div class="nav-item">Projects</div>
+          <div class="nav-item">Blog</div>
+          <div class="nav-item">Contact</div>
+        </nav>
+      </header>
+    </div>
+
+    <!-- Hero -->
+    <div class="section-title">Hero</div>
+    <div class="box hero">
+      <div class="box" style="border-style:dashed; background:#fff;">
+        <h1>Craig's Website</h1>
+        <p>
+          Wireframe placeholder for a short intro. Add a headline, a sentence or two,
+          and a primary call-to-action.
+        </p>
+        <div style="height:14px;"></div>
+        <div class="row two">
+          <div class="nav-item" style="text-align:center;">Primary CTA</div>
+          <div class="nav-item" style="text-align:center;">Secondary CTA</div>
+        </div>
+      </div>
+      <div class="placeholder">Image / Illustration</div>
+    </div>
+
+    <!-- Content Blocks -->
+    <div class="section-title">Content</div>
+    <div class="row three">
+      <div class="box card">
+        <h3>Section Card</h3>
+        <div class="lines">
+          <div class="line"></div>
+          <div class="line short"></div>
+          <div class="line"></div>
+        </div>
+      </div>
+      <div class="box card">
+        <h3>Section Card</h3>
+        <div class="lines">
+          <div class="line"></div>
+          <div class="line short"></div>
+          <div class="line"></div>
+        </div>
+      </div>
+      <div class="box card">
+        <h3>Section Card</h3>
+        <div class="lines">
+          <div class="line"></div>
+          <div class="line short"></div>
+          <div class="line"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Two-column layout -->
+    <div class="section-title">Two-column layout</div>
+    <div class="row two">
+      <div class="box">
+        <div class="section-title" style="margin-top:0;">Main content</div>
+        <div class="lines">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line short"></div>
+          <div class="line"></div>
+        </div>
+        <div style="height:12px;"></div>
+        <div class="placeholder" style="height:120px;">Embedded Media / Chart</div>
+      </div>
+      <div class="box">
+        <div class="section-title" style="margin-top:0;">Sidebar</div>
+        <div class="lines">
+          <div class="line"></div>
+          <div class="line short"></div>
+          <div class="line"></div>
+          <div class="line short"></div>
+        </div>
+        <div style="height:12px;"></div>
+        <div class="nav-item" style="text-align:center;">Newsletter Signup</div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="section-title">Footer</div>
+    <div class="box">
+      <footer>
+        © <span id="year"></span> Craig's Website — Wireframe Footer
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
