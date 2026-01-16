@@ -115,6 +115,8 @@
         relationships: { list: { data: { type: "list", id: SISTER_LIST_ID } } }
       }
     };
+    console.log("SISTER_COMPANY_ID =", SISTER_COMPANY_ID);
+console.log("Computed URL =", url);
     console.log('subscribeSister2');
     const res = await fetch(url, {
       method: "POST",
