@@ -99,7 +99,6 @@
   const KLAVIYO_REVISION = "2025-10-15"; // required header :contentReference[oaicite:2]{index=2}
 
   async function subscribeSister({ email, first_name, last_name }) {
-    console.log('subscribeSister');
     const url = `https://a.klaviyo.com/client/subscriptions/?company_id=${encodeURIComponent(SISTER_COMPANY_ID)}`;
     const body = {
       data: {
@@ -115,9 +114,6 @@
         relationships: { list: { data: { type: "list", id: SISTER_LIST_ID } } }
       }
     };
-    console.log("SISTER_COMPANY_ID =", SISTER_COMPANY_ID);
-console.log("Computed URL =", url);
-    console.log('subscribeSister2');
     const res = await fetch(url, {
       method: "POST",
       headers: {
@@ -127,35 +123,25 @@ console.log("Computed URL =", url);
       },
       body: JSON.stringify(body)
     });
-    console.log('subscribeSister3');
     if (!res.ok) throw new Error(await res.text());
   }
 
   window.addEventListener("klaviyoForms", async (e) => {
-    console.log('running');
+
     if (e?.detail?.type !== "submit") return;                 // submit event :contentReference[oaicite:3]{index=3}
-    console.log('running2');
     if (TARGET_FORM_ID && e.detail.formId !== TARGET_FORM_ID) return;
-    console.log('running3');
-    //console.log(e);
     
     const md = e.detail?.metaData || {};
-    //console.log('md' + md.$first_name);
     const payload = {
       email: md.$email,
       first_name: md.$first_name || md.firstName || "",
       last_name:  md.$last_name  || md.lastName  || ""
     };
-    //console.log(payload);
-    console.log(payload.email);
-    console.log(payload.first_name);
-    console.log(payload.last_name);
     
     if (!payload.email) return;
-    console.log('running5');
+
     try { 
       await subscribeSister(payload); 
-      console.log('running6');
         }
     
     catch (err) { console.error("Sister subscribe failed:", err); }
